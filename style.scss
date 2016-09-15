@@ -1,0 +1,19 @@
+#cars{
+    display: flex;
+    flex-direction: row;
+
+    div {
+        width: 50%;
+    }
+
+    img {
+        height: 250px;
+        display:block;        
+    }
+    
+}
+
+#difficulty {
+margin: 5% 5%;
+
+}
