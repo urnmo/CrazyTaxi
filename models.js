@@ -4,10 +4,10 @@ module.exports = {
             x: 0,
             y: 0,
             username: 'Finnequist Broadbottom',
-            score: 100,
-            fuel: 2,
-            passY: 1,
-            passyX: 1,
+            score: 0,
+            fuel: 0,
+            passY: 10,
+            passyX: 10,
         },
         move: function (x, y) {
             //if no fuel: no score, no move, nada
@@ -17,6 +17,14 @@ module.exports = {
                 this.set('fuel', this.get('fuel') - 1);
                 this.set('score', this.get('score') + 1);
             }
-        }//maybe game over function
+        },
+    start: function () {
+        //if one of the difficulty levels is checked
+        //and if a car is selected
+        // and if a username is entered
+        //then trigger the router
+        if ()
+
+        },//maybe game over function
     }),
 };

@@ -122,7 +122,7 @@ module.exports = {
         //add 1 to y, subtract 1 fuel, and increase score by 1
         moveDaCahUp: function () {
             this.model.move(0, 1);
-            console.log('move dammit');
+            
             // this.model.set('y', this.model.get('y') + 1);
             // this.model.set('fuel', this.model.get('fuel') - 1);
             // this.model.set('score', this.model.get('score') + 1);
@@ -130,6 +130,7 @@ module.exports = {
         //add one to x, subtract 1 fuel, and increase score by 1
         moveDaCahR: function () {
             this.model.move(1, 0);
+            console.log('move dammit');
             // this.model.set('y', this.model.get('x') + 1);
             // this.model.set('fuel', this.model.get('fuel') - 1);
             // this.model.set('score', this.model.get('score') + 1);

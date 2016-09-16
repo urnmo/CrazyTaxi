@@ -12,40 +12,68 @@
     <title>Crazy Taxi</title>
 </head>
 
-<body id="dingo">
-    <section id="buttons">
+<body id="main">
+
+    <header>
+        <h1>CRAZY TAXI</h1>
+    </header>
+    <section id="home">
+        <div>
+            <input id='user' type='text' placeholder="Your name here"></input>
+        </div>
+        <section id="cars">
+            <div id="car1">
+
+                <img src='http://images15.fotki.com/v792/photos/2/265225/6900988/cps01-vi.jpg'>
+                <label for="leadButt">s</label>
+                <input type='radio' name="vehicle" id="leadButt">
+            </div>
+            <div id="car2">
+                <img src='http://www.answerfinancial.com/insurance-center/wp-content/uploads/2014/04/Green-Car-iStock-680x510.jpg'>
+                <label for="priusButt">Priscilla Prius</label>
+                <input type='radio' name="vehicle" id='priusButt'>
+            </div>
+        </section>
+
+        <section id="difficulty">
+            <input type='radio' name="difficulty" id="Easy">
+            <label for="Easy">Meh.</label>
+
+            <input type='radio' name="difficulty" id="Normal">
+            <label for="Easy">Not so bad.</label>
+
+            <input type='radio' name="difficulty" id="Hard">
+            <label for="Easy">Wicked haaad.</label>
+        </section>
+
+        <div id='startButt'>
+            <button id='startBtn'>START</button>
+        </div>
+    </section>
+
+<section id="play">
+    <section id='grid'>
+        <!--dynamic generate grid items here-->
+    </section>
+    <div id="buttons">
         <button id='up'>up</button>
         <button id='right'>right</button>
         <button id='down'>down</button>
         <button id='left'>left</button>
-    </section>
-    <section>
-        <input id='user' type='text' placeholder="Your name here"></input>
-    </section>
-    <section id="cars">
-        <div id="car1">
-            <img src='http://images15.fotki.com/v792/photos/2/265225/6900988/cps01-vi.jpg'>
-            <label for="leadButt">Lenny Leadfoot</label>
-            <input type='radio' name="vehicle" id="leadButt">
-        </div>
-        <div id="car2">
-            <img src='http://www.answerfinancial.com/insurance-center/wp-content/uploads/2014/04/Green-Car-iStock-680x510.jpg'>
-            <label for="priusButt">Priscilla Prius</label>
-            <input type='radio' name="vehicle" id='priusButt'>
-        </div>
-    </section>
+    </div>
 
-    <section id="difficulty">
-        <input type='radio' name="difficulty" id="Easy">
-        <label for="Easy">Meh.</label>
 
-        <input type='radio'  name="difficulty" id="Normal">
-        <label for="Easy">Not so bad.</label>
-        
-        <input type='radio'  name="difficulty" id="Hard">
-        <label for="Easy">Wicked haaad.</label>
-        
-    </section>
+    <div id="highScore">
+        <!--dynamically generate high score here-->
+    </div>
+
+    <div id="startOver">
+    <button id='resetButt'>PLAY AGAIN</button>
+    </div>
+    
+</section>
+
+
 </body>
 
 </html>
