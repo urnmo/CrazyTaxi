@@ -25,7 +25,7 @@
             <div id="car1">
 
                 <img src='http://images15.fotki.com/v792/photos/2/265225/6900988/cps01-vi.jpg'>
-                <label for="leadButt">s</label>
+                <label for="leadButt">Larry Leadfoot</label>
                 <input type='radio' name="vehicle" id="leadButt">
             </div>
             <div id="car2">
@@ -51,29 +51,31 @@
         </div>
     </section>
 
-<section id="play">
-    <section id='grid'>
-        <!--dynamic generate grid items here-->
+    <section id="play">
+        <section id='grid'>
+            <!--dynamic generate grid items here-->
+        </section>
+        <div id="buttons">
+            <button id='up'>up</button>
+            <button id='right'>right</button>
+            <button id='down'>down</button>
+            <button id='left'>left</button>
+        </div>
+        <div id='currentStats'>
+            <!--dynamically add these-->
+        </div>
     </section>
-    <div id="buttons">
-        <button id='up'>up</button>
-        <button id='right'>right</button>
-        <button id='down'>down</button>
-        <button id='left'>left</button>
-    </div>
 
+    <section id="lose">
+        <div id="loseMsg">YOU LOSE SUCKA!</div>
+        <div id="highScore">
+            <!--dynamically generate high score here-->
+        </div>
 
-    <div id="highScore">
-        <!--dynamically generate high score here-->
-    </div>
-
-    <div id="startOver">
-    <button id='resetButt'>PLAY AGAIN</button>
-    </div>
-    
-</section>
-
-
+        <div id="startOver">
+            <button id='resetButt'>PLAY AGAIN</button>
+        </div>
+    </section>
 </body>
 
 </html>

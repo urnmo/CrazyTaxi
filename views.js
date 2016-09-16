@@ -1,5 +1,5 @@
 module.exports = {
-    taxiView: Backbone.View.extend({
+    playView: Backbone.View.extend({
         initialize: function () {
             this.model.on('change', this.render, this);
         },
@@ -27,15 +27,52 @@ module.exports = {
             this.model.start();
         },
 
+    }),
 
-        //start game function
+    startView: Backbone.View.extend({
+        initialize: function () {
 
+        },
+        events: {
+            'click #startButt': 'start',
+        }
         //render all values set by up buttons
 
-        render: function () {
-            console.log(this.model.get('y'));
-            console.log(this.model.get('fuel'));
-            console.log(this.model.get('score'));
-        }
-    })
-}
+//         render: function () {
+//             console.log(this.model.get('y'));
+//             console.log(this.model.get('fuel'));
+//             console.log(this.model.get('score'));
+//         }
+//     })
+// }
+
+
+
+        //start game function
+        start: function () {
+            //and if a car is selected
+            if (document.querySelector('#leadButt').checked) {
+                this.model.set('carName', "Larry Leadfoot");
+            } else if (document.querySelector('#priusButt').checked) {
+                this.model.set('carName', "Priscilla Prius");
+            }
+            //if one of the difficulty levels is checked
+            if (document.querySelector('#Easy').checked){
+                this.model.set('fuel', 50);
+            }else if (document.querySelector('#Normal').checked){
+                this.model.set('fuel', 20);
+            } else (document.querySelector('#Hard').checked){
+                this.model.set('fuel', 5);
+            }
+            }
+            // and if a username is entered
+            //then trigger the router
+
+
+        },//maybe game over function
+    }),
+
+    // loseView:
+
+};
+

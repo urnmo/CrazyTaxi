@@ -8,6 +8,7 @@ module.exports = {
             fuel: 0,
             passY: 10,
             passyX: 10,
+            carName: 'Leadbutt'
         },
         move: function (x, y) {
             //if no fuel: no score, no move, nada
@@ -18,13 +19,5 @@ module.exports = {
                 this.set('score', this.get('score') + 1);
             }
         },
-    start: function () {
-        //if one of the difficulty levels is checked
-        //and if a car is selected
-        // and if a username is entered
-        //then trigger the router
-        if ()
-
-        },//maybe game over function
-    }),
-};
+    })
+}
