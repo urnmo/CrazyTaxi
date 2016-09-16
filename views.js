@@ -35,16 +35,16 @@ module.exports = {
         },
         events: {
             'click #startButt': 'start',
-        }
+        },
         //render all values set by up buttons
 
-//         render: function () {
-//             console.log(this.model.get('y'));
-//             console.log(this.model.get('fuel'));
-//             console.log(this.model.get('score'));
-//         }
-//     })
-// }
+        //         render: function () {
+        //             console.log(this.model.get('y'));
+        //             console.log(this.model.get('fuel'));
+        //             console.log(this.model.get('score'));
+        //         }
+        //     })
+        // }
 
 
 
@@ -57,18 +57,18 @@ module.exports = {
                 this.model.set('carName', "Priscilla Prius");
             }
             //if one of the difficulty levels is checked
-            if (document.querySelector('#Easy').checked){
+            if (document.querySelector('#Easy').checked) {
                 this.model.set('fuel', 50);
-            }else if (document.querySelector('#Normal').checked){
+            } else if (document.querySelector('#Normal').checked) {
                 this.model.set('fuel', 20);
-            } else (document.querySelector('#Hard').checked){
+            } else {
                 this.model.set('fuel', 5);
-            }
-            }
-            // and if a username is entered
+            }            // and if a username is entered
+            this.model.set('username', document.querySelector('#user').value);
+
+
             //then trigger the router
-
-
+            this.trigger('startGame');
         },//maybe game over function
     }),
 
