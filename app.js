@@ -1,54 +1,54 @@
 //require the other js files
-let models = require('./models');
-let views = require('./views');
-let types = require('./types');
-let TaxiRouter = require('./router');
+let models = require("./models");
+let views = require("./views");
+let types = require("./types");
+let TaxiRouter = require("./router");
 
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     //set up model
     let actualModel = new models.taxiModel();
     //set up views
     let playView = new views.playView({
-        el: document.querySelector('#play'),
+        el: document.querySelector("#play"),
         model: actualModel,
     });
 
     let startView = new views.startView({
-        el: document.querySelector('#home'),
+        el: document.querySelector("#home"),
         model: actualModel,
     });
     // let loseView = new views.loseView({
-    //     el: document.querySelector('#lose'),
+    //     el: document.querySelector("#lose"),
     //     model: actualModel,
     // });
 
     //set up routers
     let router = new TaxiRouter();
 
-    // Whenever startView triggers a 'startGame' event, run this
+    // Whenever startView triggers a "startGame" event, run this
     // function.
-    startView.on('startGame', function () {
+    startView.on("startGame", function () {
         // Change URL to #play
-        router.navigate('play', { trigger: true });
+        router.navigate("play", { trigger: true });
     });
 
-    router.on('route:goHome', function () {
-        startView.el.classList.remove('hidden');
-        playView.el.classList.add('hidden');
-        // loseView.el.classlist.add('hidden');
+    router.on("route:goHome", function () {
+        startView.el.classList.remove("hidden");
+        playView.el.classList.add("hidden");
+        // loseView.el.classlist.add("hidden");
     });
 
-    router.on('route:playTime', function () {
-        playView.el.classList.remove('hidden');
-        startView.el.classList.add('hidden');
-        // loseView.el.classlist.add('hidden');
+    router.on("route:playTime", function () {
+        playView.el.classList.remove("hidden");
+        startView.el.classList.add("hidden");
+        // loseView.el.classlist.add("hidden");
     });
 
-    // router.on('route:losing', function () {
-    //     playView.el.classlist.add('hidden');
-    //     startView.el.classlist.add('hidden');
-    //     loseView.el.classlist.remove('hidden');
+    // router.on("route:losing", function () {
+    //     playView.el.classlist.add("hidden");
+    //     startView.el.classlist.add("hidden");
+    //     loseView.el.classlist.remove("hidden");
     // });
 
     Backbone.history.start();
