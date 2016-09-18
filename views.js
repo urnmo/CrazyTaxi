@@ -46,10 +46,11 @@ module.exports = {
             "click #right": "moveDaCahR",
             "click #down": "moveDaCahD",
             "click #left": "moveDaCahL",
-            "click #start": "startGame"
+            // "click #start": "startGame"
         },
         moveDaCahUp: function () {
             this.model.move(0, 1);
+            console.log("move dammit");
         },
         moveDaCahR: function () {
             this.model.move(1, 0);
@@ -57,12 +58,11 @@ module.exports = {
         },
         moveDaCahD: function () {
             this.model.move(0, -1);
+            console.log("move dammit");
         },
         moveDaCahL: function () {
             this.model.move(-1, 0);
-        },
-        startGame: function () {
-            this.model.start();
+            console.log("move dammit");
         },
 
     }),

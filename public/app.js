@@ -19,10 +19,10 @@ window.addEventListener("load", function () {
         el: document.querySelector("#home"),
         model: actualModel,
     });
-    // let loseView = new views.loseView({
-    //     el: document.querySelector("#lose"),
-    //     model: actualModel,
-    // });
+    let loseView = new views.loseView({
+        el: document.querySelector("#lose"),
+        model: actualModel,
+    });
 
     //set up routers
     let router = new TaxiRouter();
@@ -32,28 +32,29 @@ window.addEventListener("load", function () {
     startView.on("startGame", function () {
         // Change URL to #play
         router.navigate("play", {trigger: true });
+        console.log('starting');
     });
-
-   loseView.on("loseGame", function (){
+    //change URL to #lose
+   actualModel.on("loseGame", function (){
         router.navigate("lose", {trigger: true});
     })
 
     router.on("route:goHome", function () {
         startView.el.classList.remove("hidden");
         playView.el.classList.add("hidden");
-        loseView.el.classlist.add("hidden");
+        loseView.el.classList.add("hidden");
     });
 
     router.on("route:playTime", function () {
         playView.el.classList.remove("hidden");
         startView.el.classList.add("hidden");
-        loseView.el.classlist.add("hidden");
+        loseView.el.classList.add("hidden");
     });
 
     router.on("route:losing", function () {
-        playView.el.classlist.add("hidden");
-        startView.el.classlist.add("hidden");
-        loseView.el.classlist.remove("hidden");
+        playView.el.classList.add("hidden");
+        startView.el.classList.add("hidden");
+        loseView.el.classList.remove("hidden");
     });
 
     Backbone.history.start();
@@ -180,10 +181,11 @@ module.exports = {
             "click #right": "moveDaCahR",
             "click #down": "moveDaCahD",
             "click #left": "moveDaCahL",
-            "click #start": "startGame"
+            // "click #start": "startGame"
         },
         moveDaCahUp: function () {
             this.model.move(0, 1);
+            console.log("move dammit");
         },
         moveDaCahR: function () {
             this.model.move(1, 0);
@@ -191,12 +193,11 @@ module.exports = {
         },
         moveDaCahD: function () {
             this.model.move(0, -1);
+            console.log("move dammit");
         },
         moveDaCahL: function () {
             this.model.move(-1, 0);
-        },
-        startGame: function () {
-            this.model.start();
+            console.log("move dammit");
         },
 
     }),

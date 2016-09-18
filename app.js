@@ -18,10 +18,10 @@ window.addEventListener("load", function () {
         el: document.querySelector("#home"),
         model: actualModel,
     });
-    // let loseView = new views.loseView({
-    //     el: document.querySelector("#lose"),
-    //     model: actualModel,
-    // });
+    let loseView = new views.loseView({
+        el: document.querySelector("#lose"),
+        model: actualModel,
+    });
 
     //set up routers
     let router = new TaxiRouter();
@@ -31,28 +31,29 @@ window.addEventListener("load", function () {
     startView.on("startGame", function () {
         // Change URL to #play
         router.navigate("play", {trigger: true });
+        console.log('starting');
     });
-
-   loseView.on("loseGame", function (){
+    //change URL to #lose
+   actualModel.on("loseGame", function (){
         router.navigate("lose", {trigger: true});
     })
 
     router.on("route:goHome", function () {
         startView.el.classList.remove("hidden");
         playView.el.classList.add("hidden");
-        loseView.el.classlist.add("hidden");
+        loseView.el.classList.add("hidden");
     });
 
     router.on("route:playTime", function () {
         playView.el.classList.remove("hidden");
         startView.el.classList.add("hidden");
-        loseView.el.classlist.add("hidden");
+        loseView.el.classList.add("hidden");
     });
 
     router.on("route:losing", function () {
-        playView.el.classlist.add("hidden");
-        startView.el.classlist.add("hidden");
-        loseView.el.classlist.remove("hidden");
+        playView.el.classList.add("hidden");
+        startView.el.classList.add("hidden");
+        loseView.el.classList.remove("hidden");
     });
 
     Backbone.history.start();
