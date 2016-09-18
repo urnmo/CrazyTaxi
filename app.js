@@ -30,26 +30,30 @@ window.addEventListener("load", function () {
     // function.
     startView.on("startGame", function () {
         // Change URL to #play
-        router.navigate("play", { trigger: true });
+        router.navigate("play", {trigger: true });
     });
+
+   loseView.on("loseGame", function (){
+        router.navigate("lose", {trigger: true});
+    })
 
     router.on("route:goHome", function () {
         startView.el.classList.remove("hidden");
         playView.el.classList.add("hidden");
-        // loseView.el.classlist.add("hidden");
+        loseView.el.classlist.add("hidden");
     });
 
     router.on("route:playTime", function () {
         playView.el.classList.remove("hidden");
         startView.el.classList.add("hidden");
-        // loseView.el.classlist.add("hidden");
+        loseView.el.classlist.add("hidden");
     });
 
-    // router.on("route:losing", function () {
-    //     playView.el.classlist.add("hidden");
-    //     startView.el.classlist.add("hidden");
-    //     loseView.el.classlist.remove("hidden");
-    // });
+    router.on("route:losing", function () {
+        playView.el.classlist.add("hidden");
+        startView.el.classlist.add("hidden");
+        loseView.el.classlist.remove("hidden");
+    });
 
     Backbone.history.start();
 });
