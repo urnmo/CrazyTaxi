@@ -1062,11 +1062,22 @@ header {
   background-color: gray;
   display: block;
   width: 400px;
-  margin: auto; }
+  margin: 0% 30.75%; }
+
+.rows {
+  height: 35px;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .rows::before, .rows::after {
+    content: ' ';
+    display: table; }
+  .rows::after {
+    clear: both; }
 
 .cells {
   border: 1px solid black;
-  width: 8.33333%;
+  width: 10%;
   float: left;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -1080,40 +1091,12 @@ header {
   .cells:last-child:not(:first-child) {
     float: right; }
 
-.rows {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  height: 35px; }
-  .rows::before, .rows::after {
-    content: ' ';
-    display: table; }
-  .rows::after {
-    clear: both; }
-
 #buttons {
-  width: 20%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
   margin: auto;
-  display: block; }
-  @media screen and (min-width: 40em) {
-    #buttons {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-  #buttons:last-child:not(:first-child) {
-    float: right; }
+  width: 50%; }
 
 #buttons button {
-  max-width: 75rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin: auto;
-  background-color: indianred;
-  border: 2px solid black; }
-  #buttons button::before, #buttons button::after {
-    content: ' ';
-    display: table; }
-  #buttons button::after {
-    clear: both; }
+  border: 2px solid black;
+  padding: 1%;
+  margin: 5% 2%;
+  width: 15%; }

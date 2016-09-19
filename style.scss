@@ -40,9 +40,13 @@ margin:30%;
     background-color: gray;
     display: block;
     width: 400px;
-    margin: auto;
+    margin: 0% 30.75%;
 }
 
+.rows{
+    height: 35px;
+    @include grid-row(10);
+}
 
 .cells{
     border: 1px solid black;
@@ -52,21 +56,14 @@ margin:30%;
     padding: 0;
 }
 
-.rows{
-    @include grid-row(10);
-    height: 35px;
-}
-
 #buttons{
-    @include grid-column(2);
         margin: auto;
-        display: block;
+        width: 50%;
 
 }
 #buttons button{
-@include grid-row(6);
-margin: auto;
-background-color: indianred;
-border: 2px solid black;      
-
+border: 2px solid black;   
+padding: 1%;   
+margin: 5% 2%;
+width: 15%;
 }
