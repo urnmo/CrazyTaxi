@@ -39,8 +39,22 @@ module.exports = {
 
     playView: Backbone.View.extend({
         initialize: function () {
-            this.model.on("change", this.render, this);
+            for (let i = 0; i < 10; i++) {
+                let rows = document.createElement('div');
+                rows.classList.add('rows');
+                document.querySelector('#grid').appendChild(rows);
+
+                for (let j = 0; j < 10; j++) {
+                    let cells = document.createElement('div');
+                    cells.classList.add('cells');
+                    rows.appendChild(cells);
+                }
+            }
+            console.log('rendering?');
+            this.model.on('change', this.render, this);
+            this.render();
         },
+
         events: {
             "click #up": "moveDaCahUp",
             "click #right": "moveDaCahR",
@@ -65,20 +79,27 @@ module.exports = {
             console.log("move dammit");
         },
 
-    }),
+    render: function (){
+        let celly = document.querySelectorAll('.cells');
+    }
 
-    // loseView:
-    loseView: Backbone.View.extend({
-        initialize: function () {
-            this.render();
-            this.model.on("change", this.render, this);
-        },
-        events: {},
 
-        render: function () {
-            document.querySelector("#loseMsg");
-            document.querySelector("#startOver");
-        },
 
     }),
+
+
+        // loseView:
+        loseView: Backbone.View.extend({
+            initialize: function () {
+                this.render();
+                this.model.on("change", this.render, this);
+            },
+            events: {},
+
+            render: function () {
+                document.querySelector("#loseMsg");
+                document.querySelector("#startOver");
+            },
+
+        }),
 }
